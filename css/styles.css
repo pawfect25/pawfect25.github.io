@@ -239,6 +239,37 @@ body {
 /* ========================= */
 
 @media (max-width: 768px) {
+/* Hero tweaks for mobile */
+.hero {
+  padding: 80px 20px 60px; /* more top spacing so text doesn’t feel cramped */
+}
+
+.hero h1 {
+  font-size: 1.8rem;       /* slightly smaller for phone readability */
+  line-height: 1.4;        /* better spacing for wrapped text */
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 90%;           /* makes paragraph fit nicely on screen */
+  margin: 15px auto 25px;  
+}
+
+/* Navbar tweaks for mobile */
+.navbar {
+  padding: 15px 20px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-links {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  font-size: 1rem;          /* slightly smaller so links fit nicely */
+}
 
   /* NAVBAR */
   .navbar {
