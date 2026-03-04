@@ -26,42 +26,133 @@
   </div> 
 </section> 
 
+<section class="peek-divider">
+  <img src="images/peek-dogs.png" alt="Cute dogs peeking">
+</section>
+
 <section id="products" class="products"> 
   <h2>Our PAWFECT Products</h2> 
   <p class="section-intro">Sustainable dog accessories that blend comfort, style, and environmental responsibility.</p> 
 
   <div class="product-grid">
 
-    <div class="product-column">
+    <!-- BOW TIE -->
+    <div class="product-column premium" onclick="toggleProduct(this)">
       <h3>Bow Tie</h3>
-      <img src="images/product1.jpg" alt="Bow tie">
-      <img src="images/product1b.jpg" alt="Bow tie">
-      <img src="images/product1c.jpg" alt="Bow tie">
-      <p>Made from recycled fabrics. Available in multiple designs(colours and patterns).</p>
+      <img src="images/product1.jpg" alt="Bow tie" class="main-img">
+
+      <div class="product-details">
+        <img src="images/product1b.jpg" alt="Bow tie">
+        <img src="images/product1c.jpg" alt="Bow tie">
+
+        <p class="price">£5.00</p>
+        <a href="#" class="buy-btn">Purchase</a>
+
+        <div class="bundle">
+          <p class="bundle-title">Bow Tie + Collar Set</p>
+          <p class="price">£12.50</p>
+          <a href="#" class="buy-btn outline">Purchase Set</a>
+        </div>
+      </div>
     </div>
 
-    <div class="product-column">
+    <!-- COLLAR -->
+    <div class="product-column premium" onclick="toggleProduct(this)">
       <h3>Eco Rope Collar</h3>
-      <img src="images/product2.jpg" alt="Eco Rope Collar">
-      <img src="images/product2b.jpg" alt="Eco Rope Collar">
-      <img src="images/product2c.jpg" alt="Eco Rope Collar">
-      <p>Durable, lightweight, and comfortable for everyday walks. Made from recycled ropes and buckles. Available in small, medium and large.</p>
+      <img src="images/product2.jpg" alt="Eco Rope Collar" class="main-img">
+
+      <div class="product-details">
+        <img src="images/product2b.jpg" alt="Eco Rope Collar">
+        <img src="images/product2c.jpg" alt="Eco Rope Collar">
+
+        <p class="price">£10.00</p>
+
+        <div class="size-select">
+          <label>Select Size</label>
+          <select>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+        </div>
+
+        <a href="#" class="buy-btn">Purchase</a>
+      </div>
     </div>
 
-    <div class="product-column">
-      <h3>Dog Coats</h3>
-      <img src="images/product3.jpg" alt="Dog Coat">
-      <img src="images/product3b.jpg" alt="Dog Coat">
-      <img src="images/product3c.jpg" alt="Dog Coat">
-      <p>Made from upcycled towels and velco straps. Available in medium and large.</p>
+    <!-- DOG COAT -->
+    <div class="product-column premium" onclick="toggleProduct(this)">
+      <h3>Dog Coat</h3>
+      <img src="images/product3.jpg" alt="Dog Coat" class="main-img">
+
+      <div class="product-details">
+        <img src="images/product3b.jpg" alt="Dog Coat">
+        <img src="images/product3c.jpg" alt="Dog Coat">
+
+        <p class="price">£20.00</p>
+
+        <div class="size-select">
+          <label>Select Size</label>
+          <select>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+        </div>
+
+        <a href="#" class="buy-btn">Purchase</a>
+      </div>
     </div>
 
   </div>
-</section> 
+</section>
+
+<!-- Social & Shop Links -->
+<section class="social-section">
+  <h4 class="social-heading">Shop & Connect With Us</h4>
+
+  <div class="social-links">
+
+    <div class="social-item">
+      <a href="https://linktr.ee/pawfectye25" target="_blank">
+        <img src="images/linktree-icon.png" alt="Linktree">
+      </a>
+      <span>Linktree</span>
+    </div>
+
+    <div class="social-item">
+      <a href="https://www.ye-tradingstation.org.uk" target="_blank">
+        <img src="images/ye-icon.png" alt="Young Enterprise Trading Station">
+      </a>
+      <span>YE Trading Station</span>
+    </div>
+
+    <div class="social-item">
+      <a href="https://www.etsy.com/uk/people/wyt4q8340f1jddym?ref=hdr_user_menu-profile" target="_blank">
+        <img src="images/etsy-icon.png" alt="Etsy">
+      </a>
+      <span>Etsy</span>
+    </div>
+
+  </div>
+</section>
 
 <footer> 
   <p>© 2026 PAWFECT — Young Enterprise</p> 
 </footer> 
+
+<script>
+function toggleProduct(card) {
+  const details = card.querySelector(".product-details");
+  const allDetails = document.querySelectorAll(".product-details");
+
+  allDetails.forEach(d => {
+    if (d !== details) d.style.display = "none";
+  });
+
+  details.style.display =
+    details.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body> 
 </html>
