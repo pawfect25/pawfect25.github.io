@@ -39,19 +39,21 @@
     <!-- BOW TIE -->
     <div class="product-column premium" onclick="toggleProduct(this)">
       <h3>Bow Tie</h3>
+        <!-- Badge -->
+      <span class="badge">Eco-Friendly</span>
       <img src="images/product1.jpg" alt="Bow tie" class="main-img">
-
+<p class="view-more">View Details ↓</p>
       <div class="product-details">
         <img src="images/product1b.jpg" alt="Bow tie">
         <img src="images/product1c.jpg" alt="Bow tie">
 
         <p class="price">£5.00</p>
-        <a href="#" class="buy-btn">Purchase</a>
+        <a href="https://www.etsy.com/uk/people/wyt4q8340f1jddym?ref=hdr_user_menu-profile" class="buy-btn">Purchase</a>
 
         <div class="bundle">
           <p class="bundle-title">Bow Tie + Collar Set</p>
           <p class="price">£12.50</p>
-          <a href="#" class="buy-btn outline">Purchase Set</a>
+          <a href="https://www.etsy.com/uk/people/wyt4q8340f1jddym?ref=hdr_user_menu-profile" class="buy-btn outline">Purchase Set</a>
         </div>
       </div>
     </div>
@@ -59,8 +61,10 @@
     <!-- COLLAR -->
     <div class="product-column premium" onclick="toggleProduct(this)">
       <h3>Eco Rope Collar</h3>
+      <!-- Badge -->
+      <span class="badge">Sustainable</span>
       <img src="images/product2.jpg" alt="Eco Rope Collar" class="main-img">
-
+<p class="view-more">View Details ↓</p>
       <div class="product-details">
         <img src="images/product2b.jpg" alt="Eco Rope Collar">
         <img src="images/product2c.jpg" alt="Eco Rope Collar">
@@ -76,15 +80,17 @@
           </select>
         </div>
 
-        <a href="#" class="buy-btn">Purchase</a>
+        <a href="https://www.etsy.com/uk/people/wyt4q8340f1jddym?ref=hdr_user_menu-profile" class="buy-btn">Purchase</a>
       </div>
     </div>
 
     <!-- DOG COAT -->
     <div class="product-column premium" onclick="toggleProduct(this)">
       <h3>Dog Coat</h3>
+      <!-- Badge -->
+      <span class="badge">Durable</span>
       <img src="images/product3.jpg" alt="Dog Coat" class="main-img">
-
+<p class="view-more">View Details ↓</p>
       <div class="product-details">
         <img src="images/product3b.jpg" alt="Dog Coat">
         <img src="images/product3c.jpg" alt="Dog Coat">
@@ -99,11 +105,38 @@
           </select>
         </div>
 
-        <a href="#" class="buy-btn">Purchase</a>
+        <a href="https://www.etsy.com/uk/people/wyt4q8340f1jddym?ref=hdr_user_menu-profile" class="buy-btn">Purchase</a>
       </div>
     </div>
 
   </div>
+</section>
+
+<section class="why-section">
+
+  <div class="why-box">
+    <h2>Why Choose Pawfect?</h2>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <h3>♻️ Eco-Friendly</h3>
+        <p>Our accessories are designed using sustainable materials to reduce environmental impact.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>🎓 Student Business</h3>
+        <p>Pawfect was founded by sixth form students as part of the Young Enterprise programme.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>🐶 Built for Dogs</h3>
+        <p>Every product is designed to be comfortable, durable and stylish for dogs of all sizes.</p>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- Social & Shop Links -->
@@ -142,19 +175,29 @@
 
 <script>
 function toggleProduct(card) {
-  const details = card.querySelector(".product-details");
-  const allDetails = document.querySelectorAll(".product-details");
 
-  allDetails.forEach(d => {
-    if (d !== details) d.style.display = "none";
+  const allCards = document.querySelectorAll(".product-column");
+
+  allCards.forEach(c => {
+    if (c !== card) {
+      c.classList.remove("active");
+      const label = c.querySelector(".view-more");
+      if (label) label.textContent = "View Details ↓";
+    }
   });
 
-  details.style.display =
-    details.style.display === "block" ? "none" : "block";
+  card.classList.toggle("active");
+
+  const label = card.querySelector(".view-more");
+
+  if (card.classList.contains("active")) {
+    label.textContent = "Hide Details ↑";
+  } else {
+    label.textContent = "View Details ↓";
+  }
 }
 </script>
 
 </body> 
 </html>
-
 
